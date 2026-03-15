@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register - SUSHANT TERMUX</title>
+
+<style>
+
+body{
+background:black;
+font-family:monospace;
+color:#00ff00;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+width:320px;
+padding:40px;
+background:black;
+border:1px solid #00ff00;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:black;
+border:1px solid #00ff00;
+color:#00ff00;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#00ff00;
+border:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Register</h2>
+
+<input id="user" type="text" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="register()">REGISTER</button>
+
+</div>
+
+<script>
+
+function register(){
+
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
+
+localStorage.setItem("username",u);
+localStorage.setItem("password",p);
+
+alert("Account Created");
+
+window.location="index.html";
+
+}
+
+</script>
+
+</body>
+</html>
