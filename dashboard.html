@@ -1,200 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SUSHANT TERMUX Dashboard</title>
-
-<style>
-
-body{
-background:black;
-color:#00ff00;
-font-family:monospace;
-margin:0;
-}
-
-header{
-padding:20px;
-text-align:center;
-font-size:28px;
-box-shadow:0 0 20px #00ff00;
-}
-
-.container{
-padding:20px;
-}
-
-.command{
-border:1px solid #00ff00;
-padding:20px;
-margin-bottom:20px;
-}
-
-button{
-margin-top:10px;
-padding:10px;
-background:#00ff00;
-border:none;
-cursor:pointer;
-}
-
-.logout{
-position:absolute;
-top:20px;
-right:20px;
-}
-
-</style>
+<title>WELCOME</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-SUSHANT TERMUX COMMAND DASHBOARD
-</header>
+<canvas id="matrix"></canvas>
 
-<button class="logout" onclick="logout()">Logout</button>
+<div class="welcome">
 
-<div class="container">
-
-<div class="command">
-Zphisher Phising Tool
-<br><br>
-1) apt update 
-2) apt upgrade 
-3) pkg install git
-4) git clone --depth=1 https://github.com/htr-tech/zphisher.git
-5) cd zphisher 
-6) bash zphisher.sh
-<br>
-<button onclick="copy('
-(1) apt update 
-(2) apt upgrade
-(3) pkg install git 
-(4) git clone --depth=1 https://github.com/htr-tech/zphisher.git 
-(5) cd zphisher 
-(6) bash zphisher.sh')">Copy</button>
-</div>
-
-<div class="command">
-IP-HORROR
-<br><br>
-apt update && apt upgrade && apt install tur-repo && apt install git tor privoxy netcat-openbsd curl && git clone https://github.com/thakur2309/IP-HOPPRR-.git && cd IP-HOPPRR- && bash setup.sh && bash iphopper.sh
-<br>
-<button onclick="copy('apt update && apt upgrade && apt install tur-repo && apt install git tor privoxy netcat-openbsd curl && git clone https://github.com/thakur2309/IP-HOPPRR-.git && cd IP-HOPPRR- && bash setup.sh && bash iphopper.sh')">Copy</button>
-</div>
-
-<div class="command">
-DDOS ATTACK Storm-Rage
-<br><br>
-pkg update && pkg upgrade 
-pkg install git 
-git clone https://github.com/thakur2309/StormRage.git
-cd StormRage
-chmod +x install.sh
-./install.sh
-python3 stormrage.py
-<br>
-<button onclick="copy('pkg update && pkg upgrade && pkg install git && git clone https://github.com/thakur2309/StormRage.git && cd StormRage && chmod +x install.sh && ./install.sh && python3 stormrage.py')">Copy</button>
-</div>
-
-<div class="command">
-SMS BOMBER
-<br><br>
-
-
-apt update && apt upgrade
-
- apt install git 
-
- apt install python2
-
- apt install python
-
- git clone https://github.com/TheSpeedX/TBomb
-
- cd TBomb
-
- chmod +x *
-
- ./TBomb.sh
-
-
-<br>
-<button onclick="copy('
-
-apt update && apt upgrade
-
- apt install git 
-
- apt install python2
-
- apt install python
-
- git clone https://github.com/TheSpeedX/TBomb
-
- cd TBomb
-
- chmod +x *
-
- ./TBomb.sh
-
-')">Copy</button>
-</div>
-<div class="command">
-Dark Fly Tool-X
-<br><br>
-1) pkg install python2
-2) pkg install git
-3) git clone https://github.com/Ranginang67/DarkFly-Tool
-4) cd DarkFly-Tool
-5) python2 install.py
-6) DarkFly
-<br>
-<button onclick="copy('1) pkg install python2
-2) pkg install git
-3) git clone https://github.com/Ranginang67/DarkFly-Tool
-4) cd DarkFly-Tool
-5) python2 install.py
-6) DarkFly')">Copy</button>
-</div>
-<div class="command">
-FREE FIRE ID-PHISING
-<br><br>
-1) apt update && apt upgrade -y
-2) pkg install git
-3) git clone https://github.com/Hackerscolonyofficial/HCO-FreeFire-Hacks
-4) cd HCO-FreeFire-Hacks
-5) chmod +x *
-6) bash setup.sh 
-7) ./run.sh 
-<br>
-<button onclick="copy('1) apt update && apt upgrade -y
-2) pkg install git
-3) git clone https://github.com/Hackerscolonyofficial/HCO-FreeFire-Hacks
-4) cd HCO-FreeFire-Hacks
-5) chmod +x *
-6) bash setup.sh 
-7) ./run.sh ')">Copy</button>
-</div>
+<h1 id="welcomeText"></h1>
 
 </div>
 
 <script>
 
-function copy(cmd){
+let user = localStorage.getItem("loggedUser")
 
-navigator.clipboard.writeText(cmd);
-alert("Command Succesfully Copied");
+let text = "WELCOME " + user + " ACCESS GRANTED"
 
+let i = 0
+
+function type(){
+if(i < text.length){
+document.getElementById("welcomeText").innerHTML += text.charAt(i)
+i++
+setTimeout(type,80)
+}
 }
 
-function logout(){
-
-window.location="index.html";
-
-}
+type()
 
 </script>
 
+<script src="script.js"></script>
+
 </body>
- </html>
+</html>,
